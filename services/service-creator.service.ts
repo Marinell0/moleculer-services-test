@@ -1,6 +1,5 @@
 import { Context, Service, ServiceBroker } from "moleculer";
 import ToBeCreatedService from "./service-to-be-created";
-const gc = require("expose-gc/function");
 
 export interface ServiceParams {
     name: string;
@@ -29,7 +28,6 @@ export default class ServiceCreatorService extends Service {
                         const destroyed = await this.broker.destroyService(`${ctx.params.name}-${ctx.params.id}`);
                         broker.logger.info(`broker.registry.nodes.localNode.services.length: ${broker.registry.nodes.localNode.services.length}`);
                         broker.logger.info(`broker.services.length: ${broker.services.length}`);
-                        gc();
                         return `Destroyed service ${ctx.params.name}-${ctx.params.id}: ${destroyed}`;
                     },
                 }
