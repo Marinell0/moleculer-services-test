@@ -8,14 +8,11 @@ Start the project with `npm run dev` command.
 In the terminal, try the following commands:
 - `nodes` - List all connected nodes.
 - `actions` - List all registered service actions.
-- `call greeter.hello` - Call the `greeter.hello` action.
-- `call greeter.welcome --name John` - Call the `greeter.welcome` action with the `name` parameter.
-
-
+- `call service-creator.createService` - Creates a service with a huge array inside. Parameters: name (string) and id (number).
+- `call service-creator.deleteService` - Deletes a created service. Parameters: name (string) and id (number).
 
 ## Services
-- **api**: API Gateway services
-- **greeter**: Sample service with `hello` and `welcome` actions.
+- **service-creator**: Service with `service-creator.createService` and `service-creator.deleteService` actions. Used to create huge services.
 
 
 ## Useful links
