@@ -6,14 +6,14 @@ export interface ServiceParams {
 }
 
 export default class ToBeCreatedService extends Service {
-    private readonly hugeArray = new Array(10000000).fill(3500);
+    private readonly hugeArray = new Array(50000000).fill(3500);
     public constructor(broker: ServiceBroker, name: string, id: number) {
         super(broker);
         this.parseServiceSchema({
             name: `${name}-${id}`,
             events: {
                 "say.hello": (ctx: Context) => {
-                    this.logger.info(`Hello from ${name}`);
+                    this.logger.info(`Hello from ${name}-${id}`);
                 },
                 "say.array": (ctx: Context) => {
                     this.logger.info(`Array from ${name}: ${this.hugeArray.length}`);
